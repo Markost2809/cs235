@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>main</title>
+    <link rel="stylesheet" Style.css />
+  </head>
+
+  <body>
+        <nav class="navbar">
+          <div class="container">
+              <div class="navbar-end">
+                <a href="{{ url_for('main.profile') }}">
+                  Home
+                </a>
+                <a href="{{ url_for('main.profile') }}">
+                  Profile
+                </a>
+                <a href="{{ url_for('main.landing') }}">
+                  Logout
+                </a>
+              </div>
+        </nav>
+      </div>
+
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          {% block content %} {% endblock %}
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
