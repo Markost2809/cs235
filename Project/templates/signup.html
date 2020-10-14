@@ -5,26 +5,23 @@
     <title>Sign Up</title>
   </head>
   <body>
-    <form method="POST" action="/signup">
-      <p>email</p>
-      <div class="container">
-        <label for="email">
-          <input type="text" class="email" />
-        </label>
+    <form action="/signup" method="POST">
+      <div class="field">
+          <div class="control">
+              <input type="email" name="email" placeholder="Email" autofocus="">
+          </div>
       </div>
-      <p>name</p>
-      <div class="container">
-        <label for="name">
-          <input type="text" class="name" />
-        </label>
+      <div class="field">
+          <div class="control">
+              <input type="text" name="name" placeholder="Name" autofocus="">
+          </div>
+        </div>
+      <div class="field">
+          <div class="control">
+              <input type="password" name="password" placeholder="Password">
+          </div>
       </div>
-      <p>Password</p>
-      <div class="container">
-        <label for="Password">
-          <input type="text" class="Password" />
-        </label>
-      </div>
-      <button>sign up</button>
-    </form>
+      <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+  </form>
   </body>
 </html>

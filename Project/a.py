@@ -1,5 +1,7 @@
-a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+cm = int(input("Enter Height:"))
 
-a[9], a[8] = a[8], a[9]
+feet = cm // 30.48
 
-print(a)
+inches = (cm % 30.48) / 2.54
+
+print(f"{feet} feet {inches} inches")
