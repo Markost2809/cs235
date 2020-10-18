@@ -123,3 +123,6 @@ form {
   transform: translate(-50%, -50%);
   padding: 5px 20px;
 }
+input::placeholder{
+  padding-left:15px
+}

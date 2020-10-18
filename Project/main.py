@@ -6,10 +6,4 @@ main = Blueprint("main", __name__)
 
 @main.route("/")
 def landing():
-    return render_template("navigation.html")
-
-
-@main.route("/home")
-@login_required
-def profile():
     return render_template("main.html")
