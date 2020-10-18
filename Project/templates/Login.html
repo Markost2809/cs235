@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="Style.css" />
+    <link rel="stylesheet" href="Style.css" >  
     <title>Login</title>
   </head>
   <body>
+    <div class="box">
     <form method="POST" action="/login">
+      Email:
+      <div class="outer-field">
       <div class="field">
-          <div class="control">
-              <input type="email" name="email" placeholder="Your Email" autofocus="">
-          </div>
+        <input class="inner-field" type="email" name="email" placeholder="Your Email" autofocus="">
       </div>
+    </div>
+      Password:
+    <div class="outer-field">
       <div class="field">
-          <div class="control">
-              <input type="password" name="password" placeholder="Your Password">
-          </div>
+        <input class="inner-field" type="password" name="password" placeholder="Your Password">
       </div>
-      <button class="button is-block is-info is-large is-fullwidth">Login</button>
+      </div>
+      <button>Login</button>
+    </div>
   </form>
   </body>
 </html>

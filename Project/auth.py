@@ -23,7 +23,7 @@ def login_post():
 
     login_user(user)
 
-    return redirect(url_for("main.profile"))
+    return redirect(url_for("main.landing"))
 
 
 @auth.route('/signup', methods=["GET"])
@@ -58,4 +58,4 @@ def logout():
 
 @auth.route("/fail")
 def fail():
-    return "Nice one dumbass"
+    return "Unluggy"

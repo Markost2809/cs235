@@ -211,8 +211,9 @@ class User:
         if type(review) == Review:
             self.reviews += [review]
 
+
 class MovieFileCSVReader:
-    def __init__(self,filename):
+    def __init__(self, filename):
         self.filename = filename
         self.dataset_of_movies = []
         self.dataset_of_directors = []
@@ -224,20 +225,21 @@ class MovieFileCSVReader:
             csv_reader = csv.DictReader(csv_file)
 
             for line in csv_reader:
-                #Get Movies
-                self.dataset_of_movies += [Movie(line["Title"],int(line["Year"]))]
-                #Get Director
-                director= Director(line["Director"])
+                # Get Movies
+                self.dataset_of_movies += [Movie(line["Title"],
+                                                 int(line["Year"]))]
+                # Get Director
+                director = Director(line["Director"])
                 if director not in self.dataset_of_directors:
                     self.dataset_of_directors += [director]
-                #Get Genres
 
+                # Get Genres
                 for genres in line["Genre"].split(","):
                     genre = Genre(genres)
                     if genre not in self.dataset_of_genres:
                         self.dataset_of_genres += [genre]
 
-                #Get Actors
+                # Get Actors
                 for actors in line["Actors"].split(","):
                     actor = Actor(actors.strip())
                     if actor not in self.dataset_of_actors:

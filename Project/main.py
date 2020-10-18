@@ -6,7 +6,7 @@ main = Blueprint("main", __name__)
 
 @main.route("/")
 def landing():
-    return render_template("landing.html")
+    return render_template("navigation.html")
 
 
 @main.route("/home")
