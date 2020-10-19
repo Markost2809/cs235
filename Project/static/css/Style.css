@@ -127,3 +127,11 @@ form {
 input::placeholder {
   padding-left: 15px;
 }
+
+.movie{
+  margin-top: 20px;
+  padding:20px;
+  background-color: #55d6aa;
+  border-radius: 15px;
+  width: 45vw;
+}

@@ -2,8 +2,7 @@
 
 {% block content %}
 {% for movie in movies %}
-<h2 style = "color:white;">Movie:{{movie.title}}, Description:{{movie.description}} Director:{{movie.director}}</h2>
-<br>
+<div class="movie">Movie:{{movie.title}}, Description:{{movie.description}} Director:{{movie.director}}</div>
 
 {% endfor %}
 {% endblock %}

@@ -22,18 +22,18 @@ class MovieFileCSVReader():
                 movie.description = line["Description"]
                 movie.runtime_minute = int(line["Runtime (Minutes)"])
                 # Get Director
-                director += Director(line["Director"])
-                self.dataset_of_directors.add(director)
+                director = Director(line["Director"])
+                self.dataset_of_directors.append(director)
                 movie.director = director
                 # Get Genres
                 for genres in line["Genre"].split(","):
                     genre = Genre(genres)
-                    self.dataset_of_genres.add(genres)
+                    self.dataset_of_genres.append(genres)
                     movie.add_genre(genre)
                 # Get Actors
                 for actors in line["Actors"].split(","):
                     actor = Actor(actors)
-                    self.dataset_of_actors.add(actor)
+                    self.dataset_of_actors.append(actor)
                     movie.add_actor(actor)
                 # Get Description
 

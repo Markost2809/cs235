@@ -8,7 +8,7 @@ db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
-
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['SECRET_KEY'] = 'key'
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 
