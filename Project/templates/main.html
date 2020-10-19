@@ -1,5 +1,9 @@
 {% extends "navigation.html" %}
 
 {% block content %}
-this is main
+{% for movie in movies %}
+<h2 style = "color:white;">Movie:{{movie.title}}, Description:{{movie.description}} Director:{{movie.director}}</h2>
+<br>
+
+{% endfor %}
 {% endblock %}
