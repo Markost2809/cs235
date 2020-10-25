@@ -4,14 +4,10 @@
         <nav>
 
           <ul>
-            <li style="text-align: left;" >Markos Tadesse</li>
             <li><a href="{{ url_for('home_bp.home') }}">Home</a></li>
-            {% if not session %}
             <li><a href="{{ url_for('authentication_bp.login') }}">Login</a></li>
             <li><a href="{{ url_for('authentication_bp.register') }}">Sign Up</a></li>
-            {% else %}
             <li><a href="{{ url_for('authentication_bp.logout') }}">Logout</a></li>
-            {% endif %}
           </ul>
         </nav>
         </div>

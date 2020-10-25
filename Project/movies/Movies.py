@@ -12,8 +12,6 @@ import Project.adapters.repository as repo
 import Project.utilities.utilities as utilities
 import Project.movies.services as services
 
-from Project.authentication.auth import login_required
-
 
 movies_blueprint = Blueprint(
     'movies_bp', __name__)
@@ -39,7 +37,7 @@ def movies():
     keys = [cursor,cursor + 1, cursor + 2, cursor + 3]
     movies = {k: movies_dict[k] for k in keys}
 
-    if cursor > 0:
+    if cursor > 1:
         prev_movies_url = url_for('movies_bp.movies', cursor=cursor - movie_per_page)
         first_movies_url = url_for('movies_bp.movies')
 
