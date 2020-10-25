@@ -1,0 +1,10 @@
+{% extends 'main.html '%}
+
+{% block content %}
+<div class="movie"> 
+    <h1 style="text-align: center;"> Welcome.</h1> </br>
+        
+    This website contains a catalogue of movies. </br>
+    click <a href= "{{url_for('movies_bp.movies')}}">here</a> to view them
+</div>
+{% endblock %}

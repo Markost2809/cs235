@@ -1,33 +1,33 @@
-from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+from flask import Flask\
 
+import os
 
-db = SQLAlchemy()
+import Project.adapters.repository as repo
+from Project.adapters.memory_repository import MemoryRepository, populate
 
+def create_app(test_config=None):
 
-def create_app():
     app = Flask(__name__)
-    app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.config['SECRET_KEY'] = 'key'
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 
-    db.init_app(app)
+    app.config.from_object('config.Config')
+    data_path = os.path.join('Project', 'adapters', 'data')
 
-    login_manager = LoginManager()
-    login_manager.login_view = "auth.login"
-    login_manager.init_app(app)
+    repo.repo_instance = MemoryRepository()
+    populate(data_path, repo.repo_instance)
 
-    from .models import User
 
-    @login_manager.user_loader
-    def load_user(user_id):
-        return User.query.get(user_id)
+    with app.app_context():
+        # Register blueprints.
+        from .home import home
+        app.register_blueprint(home.home_blueprint)
 
-    from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint)
+        from .movies import movies
+        app.register_blueprint(movies.movies_blueprint)
 
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+        from .authentication import auth
+        app.register_blueprint(auth.authentication_blueprint)
+
+        from .utilities import utilities
+        app.register_blueprint(utilities.utilities_blueprint)
 
     return app

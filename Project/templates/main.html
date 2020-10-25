@@ -1,8 +1,17 @@
-{% extends "navigation.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Style.css') }}" >
+  </head>
+  <body>
 
-{% block content %}
-{% for movie in movies %}
-<div class="movie">Movie:{{movie.title}}, Description:{{movie.description}} Director:{{movie.director}}</div>
+    {% include 'navigation.html' %}
+    
+    {% block content %}
 
-{% endfor %}
-{% endblock %}
+    {% endblock %}
+
+  </body>
+</html>

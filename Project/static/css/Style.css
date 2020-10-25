@@ -86,12 +86,7 @@ nav a:hover::before {
   height: 60%;
 }
 
-form {
-  width: 80%;
-  position: relative;
-  margin: auto;
-  padding: 50px;
-}
+
 
 .field {
   position: relative;
@@ -116,7 +111,7 @@ form {
   padding-bottom: 20px;
 }
 
-.box button {
+.button_styles {
   margin: 0;
   position: absolute;
   left: 50%;
@@ -129,9 +124,12 @@ input::placeholder {
 }
 
 .movie{
+  margin: auto;
   margin-top: 20px;
   padding:20px;
   background-color: #55d6aa;
   border-radius: 15px;
   width: 45vw;
+  left: 50%;
+  
 }
