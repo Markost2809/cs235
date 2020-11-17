@@ -21,8 +21,8 @@ def create_app(test_config=None):
         from .home import home
         app.register_blueprint(home.home_blueprint)
 
-        from .movies import movies
-        app.register_blueprint(movies.movies_blueprint)
+        from .movies import Movies
+        app.register_blueprint(Movies.movies_blueprint)
 
         from .authentication import auth
         app.register_blueprint(auth.authentication_blueprint)
